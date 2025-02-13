@@ -8,7 +8,7 @@ body {
 
 @layer base {
   :root {
-    --background: 224, 5%, 95%;
+    --background: 224 5% 95%;
     --foreground: 240 10% 3.9%;
 
     --card: 0 0% 100%;
@@ -34,7 +34,7 @@ body {
 
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 142.1 76.2% 36.3%;
+    --ring: 221.2 83.2% 53.3%;
 
     --radius: 1rem;
   }
@@ -66,7 +66,7 @@ body {
 
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 142.4 71.8% 29.2%;
+    --ring: 224.3 76.3% 48%;
   }
 }
 
