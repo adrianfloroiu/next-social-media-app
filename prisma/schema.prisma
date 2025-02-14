@@ -19,12 +19,12 @@ model User {
   name          String?
   emailVerified Boolean
   image         String?
+  bio           String?
   createdAt     DateTime
   updatedAt     DateTime
   sessions      Session[]
   accounts      Account[]
-
-  bio String?
+  posts         Post[]
 
   @@map("user")
 }
@@ -72,4 +72,14 @@ model Verification {
   updatedAt  DateTime?
 
   @@map("verification")
+}
+
+model Post {
+  id        String   @id @default(cuid())
+  content   String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+
+  @@map("post")
 }

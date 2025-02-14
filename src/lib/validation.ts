@@ -2,6 +2,8 @@ import { z } from "zod";
 
 const requiredString = z.string().trim().min(1, "This field is required");
 
+// Auth
+
 export const signUpSchema = z.object({
   email: requiredString.email("Invalid email"),
   name: requiredString.regex(
@@ -22,3 +24,9 @@ export const signInSchema = z.object({
 export type SignUpValues = z.infer<typeof signUpSchema>;
 
 export type SignInValues = z.infer<typeof signInSchema>;
+
+// Posts
+
+export const createPostSchema = z.object({
+  content: requiredString,
+});
