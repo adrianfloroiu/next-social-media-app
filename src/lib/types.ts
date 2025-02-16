@@ -1,12 +1,15 @@
 import { Prisma } from "@prisma/client";
 
+export const userDataSelect = {
+  id: true,
+  name: true,
+  email: true,
+  image: true,
+} satisfies Prisma.UserSelect;
+
 export const postDataInclude = {
   user: {
-    select: {
-      id: true,
-      name: true,
-      image: true,
-    },
+    select: userDataSelect,
   },
 } satisfies Prisma.PostInclude;
 
