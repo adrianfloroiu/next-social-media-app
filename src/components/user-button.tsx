@@ -27,6 +27,7 @@ import {
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
+import { useQueryClient } from "@tanstack/react-query";
 
 interface UserButtonProps {
   className?: string;
@@ -36,9 +37,11 @@ export default function UserButton({ className }: UserButtonProps) {
   const { data: session } = authClient.useSession();
   const router = useRouter();
   const { theme, setTheme } = useTheme();
+  const queryClient = useQueryClient();
 
   const handleLogout = async () => {
     try {
+      queryClient.clear();
       await authClient.signOut({
         fetchOptions: {
           onSuccess: () => {
