@@ -117,7 +117,9 @@ export default function SignUpForm() {
             </FormItem>
           )}
         />
-        <LoadingButton pending={pending}>Create account</LoadingButton>
+        <LoadingButton pending={pending} className="w-full">
+          Create account
+        </LoadingButton>
       </form>
     </Form>
   );

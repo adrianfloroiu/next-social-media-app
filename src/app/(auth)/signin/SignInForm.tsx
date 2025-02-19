@@ -98,7 +98,9 @@ export default function SignInForm() {
             </FormItem>
           )}
         />
-        <LoadingButton pending={pending}>Sign in</LoadingButton>
+        <LoadingButton pending={pending} className="w-full">
+          Sign in
+        </LoadingButton>
       </form>
     </Form>
   );
